@@ -1,0 +1,218 @@
+{
+  "normal_operating_conditions": {
+    "description": "In order to obtain data representing normal operating conditions, three datasets (T1, T2, and T3) were acquired from the system. The set points of air and water flow rates were deliberately varied during the tests to obtain data from the process working under variable operating conditions. To ensure that the conditions during normal operation were representative, 20 different combinations of air and water flow rates were tested for each one of the three training datasets. In each one of them, the flow conditions were changed, though not identically, in order to obtain a good variety of large, small, long, and slow process changes happening in different directions (increment or decrement). The objective of this variety in the operational conditions is to ensure that the dynamics of the system are captured in all circumstances. These set points were selected in order to cover the available range of flow rate that the facility can supply through VC101 and VC302, avoiding excessively low flow rates to ensure that the conditions introduced will not generate slugging in the riser.",
+    "datasets": [
+      "T1",
+      "T2",
+      "T3"
+    ],
+    "set_points": [
+      {
+        "airflow_rate_m3_s": [0.0208, 0.0278, 0.0347, 0.0417],
+        "waterflow_rate_kg_s": [0.5, 1, 2, 3.5, 6]
+      }
+    ]
+  },
+  "fault_case_1 : air line blockage": {
+    "description": [
+      "Just before the air, water, and oil supply lines are joined at the mixing point, there are individual manual valves for each one of the lines.",
+      "The fault introduced in this fault case was to gradually close the manual valve of the air line, simulating an air blockage that develops over time.",
+      "The valve angle was measured using a protractor attached to the valve in order to record the fault evolution, but this measurement was not included in the measurement list for monitoring.",
+      "At the beginning of the experiments, the valve was fully open (normal conditions), and then the valve was gradually closed to introduce the fault conditions simulating the blockage.",
+      "For this fault case, three data sets were acquired: one set under changing operational conditions (1.1) and another two sets had constant air and water flow rates (1.2 and 1.3, see Table)."
+    ],
+     "datasets": [
+      {
+        "dataset": "1.1",
+        "operating_conditions": "Changing",
+        "duration_seconds": 5811,
+        "water_flow_rate_kg_s": "Varying",
+        "air_flow_rate_m3_s": "Varying",
+        "fault_start_seconds": 1566,
+        "fault_end_seconds": 5181
+      },
+      {
+        "dataset": "1.2",
+        "operating_conditions": "Steady-state",
+        "duration_seconds": 4467,
+        "water_flow_rate_kg_s": 2,
+        "air_flow_rate_m3_s": 0.0417,
+        "fault_start_seconds": 657,
+        "fault_end_seconds": 3777
+      },
+      {
+        "dataset": "1.3",
+        "operating_conditions": "Steady-state",
+        "duration_seconds": 4321,
+        "water_flow_rate_kg_s": 3.5,
+        "air_flow_rate_m3_s": 0.0208,
+        "fault_start_seconds": 691,
+        "fault_end_seconds": 3691
+      }
+    ]
+
+  },
+  "fault_case_2 : water line blockage": {
+    "description": [
+      "This fault is exactly the same as the fault introduced in fault case 1, with the difference that in this fault case, the water line valve was closed gradually to simulate the blockage instead of the air line valve.",
+      "Despite the similarity of the fault to the air line blockage, the consequences are expected to be different.",
+      "The main reason is that the physical properties of air and water (especially density and viscosity) are considerably dissimilar.",
+      "For this fault case, three data sets were acquired: one under changing operational conditions (2.1) and two more sets with constant air and water flow rates (2.2 and 2.3, see Table)."
+    ],
+    "dataset": [
+      {
+        "dataset": "2.1",
+        "operating_conditions": "Changing",
+        "duration_seconds": 9192,
+        "water_flow_rate_kg_s": "Varying",
+        "air_flow_rate_m3_s": "Varying",
+        "fault_start_seconds": 2244,
+        "fault_end_seconds": 6616
+      },
+      {
+        "dataset": "2.2",
+        "operating_conditions": "Steady-state",
+        "duration_seconds": 3496,
+        "water_flow_rate_kg_s": 2,
+        "air_flow_rate_m3_s": 0.0278,
+        "fault_start_seconds": 476,
+        "fault_end_seconds": 2656
+      },
+      {
+        "dataset": "2.3",
+        "operating_conditions": "Steady-state",
+        "duration_seconds": 3421,
+        "water_flow_rate_kg_s": 3.5,
+        "air_flow_rate_m3_s": 0.0417,
+        "fault_start_seconds": 331,
+        "fault_end_seconds": 2467
+      }
+    ]
+  },
+  "fault_case_3:top separator input blockage": {
+    "description": [
+    "In this fault case, the type of fault introduced is similar to the air and water line blockage. ",
+    "The main difference is that the valve involved in this fault case is VC404 (top separator input).",
+    "The valve can be operated remotely from the control room, and the angular position can be accurately observed. ",
+    "This allows a precise observation of how the fault severity affects the condition monitoring performance.",
+    "Again, this measurement was not included in the data analyses for fault detection and diagnosis.",
+    "The fault was introduced in most cases with a fast evolution in the first instance due to the inherent behavior of ball valves: in this type of valve,",
+    "the change in the pressure drop is almost insignificant for valve positions near the fully open position, but it is much more sensitive to changes near the fully closed position.",
+    "For this fault case, three data sets were acquired, one of them under changing operational conditions (3.1) and two more with constant air and water flow rates (3.2 and 3.3, see Table)."
+    ],
+    "datasets": [
+      {
+        "dataset": "3.1",
+        "operating_conditions": "Changing",
+        "duration_seconds": 9090,
+        "water_flow_rate_kg_s": "Varying",
+        "air_flow_rate_m3_s": "Varying",
+        "fault_start_seconds": 1136,
+        "fault_end_seconds": 8352
+      },
+      {
+        "dataset": "3.2",
+        "operating_conditions": "Steady-state",
+        "duration_seconds": 6272,
+        "water_flow_rate_kg_s": 2,
+        "air_flow_rate_m3_s": 0.0278,
+        "fault_start_seconds": 333,
+        "fault_end_seconds": 5871
+      },
+      {
+        "dataset": "3.3",
+        "operating_conditions": "Steady-state",
+        "duration_seconds": 10764,
+        "water_flow_rate_kg_s": 3.5,
+        "air_flow_rate_m3_s": 0.0208,
+        "fault_start_seconds": 596,
+        "fault_end_seconds": 9566
+      }
+    ]
+  },
+  "fault_case_4 : open direct bypass": {
+    "description": "Under fault mode 4, a leakage at the bottom of the riser was simulated, causing a lack of flow in the test area. The 4\" bypass line can direct the multiphase flow after the mixing point to the 3-phase separator, bypassing the riser. There are valves at the beginning and at the end of this alternative line to isolate it from the rest of the system, and in normal conditions, they are always closed. These valves were opened gradually during the tests to direct the flow at the bottom of the riser through the bypass line, simulating a leakage at this point. For this fault case, three datasets were acquired: one set under changing operational conditions (4.1) and two others with constant air and water flow rates (4.2 and 4.3, see Table 7).",
+    "datasets": [
+      {
+        "dataset": "4.1",
+        "operating_conditions": "Changing",
+        "duration_seconds": 7208,
+        "water_flow_rate_kg_s": "Varying",
+        "air_flow_rate_m3_s": "Varying",
+        "fault_start_seconds": 953,
+        "fault_end_seconds": 6294
+      },
+      {
+        "dataset": "4.2",
+        "operating_conditions": "Steady-state",
+        "duration_seconds": 4451,
+        "water_flow_rate_kg_s": 2,
+        "air_flow_rate_m3_s": 0.0417,
+        "fault_start_seconds": 851,
+        "fault_end_seconds": 3851
+      },
+      {
+        "dataset": "4.3",
+        "operating_conditions": "Steady-state",
+        "duration_seconds": 3661,
+        "water_flow_rate_kg_s": 3.5,
+        "air_flow_rate_m3_s": 0.0208,
+        "fault_start_seconds": 241,
+        "fault_end_seconds": 3241
+      }
+    ]
+  },
+    "fault_case_5 : slugging conditions": {
+    "description": "Slugging (Jansen, Shoham, & Taitel, 1996) is a transient phenomenon that can occur in risers with multiphase flow when the velocities of the gas and the liquid are relatively low. The liquid tends to accumulate in the base of the riser, blocking the gas flow. Due to this blockage, the pressure builds up on the blockage until it is sufficient to flush the liquid (and the gas) out of the riser. After this surge, the liquid remaining in the riser falls down, creating a new blockage and starting the cycle again. This phenomenon is typical for offshore oil production systems, where multiphase hydrocarbon fluids travel from an oil field along a pipeline on the seabed to a riser connecting to a separation process on an offshore oil rig. It can produce large amplitude fluctuations in the pressure and flow rates, which can affect and damage the equipment (Ogazi, Cao, Yeung, & Lao, 2010). The fault was introduced by reducing the air and water flow rates to regimes where slugging is produced. During the test, the flow rate was varying at different points from normal to slugging conditions. For this fault case, two datasets were acquired; both of them under changing operational conditions (see Table 8). For dataset 5.1, slugging conditions were introduced and removed twice during the experiment (referred in Table 8 as Fault 1 and Fault 2), while for dataset 5.2, slugging was introduced at three different stages of the experiment (referred in Table 8 as Fault 1, Fault 2, and Fault 3).",
+    "datasets": [
+      {
+        "dataset": "5.1",
+        "operating_conditions": "Changing",
+        "duration_seconds": 2541,
+        "water_flow_rate_kg_s": "Varying",
+        "air_flow_rate_m3_s": "Varying",
+        "fault_1_start_seconds": 686,
+        "fault_1_end_seconds": 1172,
+        "fault_2_start_seconds": 1772,
+        "fault_2_end_seconds": 2253
+      },
+      {
+        "dataset": "5.2",
+        "operating_conditions": "Changing",
+        "duration_seconds": 10608,
+        "water_flow_rate_kg_s": "Varying",
+        "air_flow_rate_m3_s": "Varying",
+        "fault_1_start_seconds": 1633,
+        "fault_1_end_seconds": 2955,
+        "fault_2_start_seconds": 7031,
+        "fault_2_end_seconds": 7553,
+        "fault_3_start_seconds": 8057,
+        "fault_3_end_seconds": 10608
+      }
+    ]
+  },
+  "fault_case_6 : pressurization of the 2” line": {
+    "description": "In the fault cases presented previously, the 4” line was used to carry the flow to the top of the riser. In these conditions, the 2” line is totally isolated from the rest of the system and thus should not be pressurized. In the top of the riser, just before the input of the top separator, there is a bridge with a valve that connects the 4” and the 2” lines. The fault was introduced as a result of opening this bridge valve but keeping both sides of the 2” isolated from the rest of the installation. The objective of this fault condition is to simulate an unusual operation of the system that in a real process can cause degradation in the performance or in the output product quality or even safety issues. This fault should not affect the flow conditions in the 4” line or other parts of the rig, but it will pressurize the 2” line. In this particular fault case, an additional variable was measured and included in the analysis. This variable is the pressure measured in the bottom of the riser in the 2” line by PT417. For this fault case, 2 datasets were acquired (6.1 and 6.2), both of them under changing operational conditions (see Table 9).",
+    "datasets": [
+      {
+        "dataset": "6.1",
+        "operating_conditions": "Changing",
+        "duration_seconds": 2800,
+        "water_flow_rate_kg_s": "Varying",
+        "air_flow_rate_m3_s": "Varying",
+        "fault_start_seconds": 1723,
+        "fault_end_seconds": 2800
+      },
+      {
+        "dataset": "6.2",
+        "operating_conditions": "Changing",
+        "duration_seconds": 4830,
+        "water_flow_rate_kg_s": "Varying",
+        "air_flow_rate_m3_s": "Varying",
+        "fault_start_seconds": 1037,
+        "fault_end_seconds": 4830
+      }
+    ]
+  }
+
+}
