@@ -6,8 +6,8 @@ IF4FD: Multi-Scale Information Fusion for Zero-Shot Industrial Fault Diagnosis, 
 ![Framwork](IF4FD_framework.png)
 
 # Dataset
-TEP
-CMFF
+TEP：DATASET/TEP
+CMFF：DATASET/CMFF
 
 # Reproduce Results
 ```
