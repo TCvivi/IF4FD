@@ -7,5 +7,5 @@ IF4FD: Multi-Scale Information Fusion for Zero-Shot Industrial Fault Diagnosis, 
 
 # Reproduce Results
 ```
-python3 main.py
+python3 IF4FD_main.py
 ```
